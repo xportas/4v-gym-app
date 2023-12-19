@@ -1,0 +1,27 @@
+img {
+    max-width: 70px;
+}
+
+span {
+    font-size: 2em;
+    font-weight: 900;
+    color: #c52f2f;
+}
+
+#selectable {
+    padding-top: 0.5em;
+}
+
+#selectable:hover {
+    background-color: rgb(209, 190, 190);
+    border-top: 5px solid #c52f2f
+}
+
+#selectable:active {
+    border-top: 5px solid #c52f2f
+}
+
+#no-gutters {
+    padding: 0px;
+    margin: 0px;
+}

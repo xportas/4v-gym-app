@@ -5,7 +5,7 @@ img {
 span {
     font-size: 2em;
     font-weight: 900;
-    color: #c52f2f;
+    color: #ca1c1c;
 }
 
 #selectable {
@@ -14,11 +14,11 @@ span {
 
 #selectable:hover {
     background-color: rgb(209, 190, 190);
-    border-top: 5px solid #c52f2f
+    border-top: 5px solid #ca1c1c
 }
 
 #selectable:active {
-    border-top: 5px solid #c52f2f
+    border-top: 5px solid #ca1c1c
 }
 
 #no-gutters {

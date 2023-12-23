@@ -1,0 +1,44 @@
+.container-fluid {
+    margin-top: 7em;
+}
+
+input,
+span,
+.card {
+    background-color: #d2d5d8;
+    border: #d2d5d8;
+}
+
+#img-plus {
+    max-height: 150px;
+}
+
+#img-arrow {
+    max-height: 50px;
+}
+
+#img-person, 
+#img-addperson {
+    max-width: 7em;
+}
+
+#img-search,
+#img-drop-edit {
+    max-height: 20px;
+}
+
+.form-control {
+    max-width: 50%;
+}
+
+#btn-modal {
+    background-color: #ca1c1c;
+    color: white;
+    padding: 0px 2em;
+}
+
+.modal-header, 
+.modal-body,
+.modal-footer {
+    border:none;
+}

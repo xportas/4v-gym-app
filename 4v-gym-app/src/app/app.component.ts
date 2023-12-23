@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbartopComponent } from './navbartop/navbartop.component';
 import { NavbarbottomComponent } from './navbarbottom/navbarbottom.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbartopComponent, NavbarbottomComponent],
+  imports: [CommonModule, RouterOutlet, NavbartopComponent, NavbarbottomComponent, CarouselComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

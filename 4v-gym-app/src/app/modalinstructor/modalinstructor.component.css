@@ -5,6 +5,7 @@
 input {
     background-color: #d2d5d8;
     border: #d2d5d8;
+    max-width: 55%;
 }
 
 #btn-modal {

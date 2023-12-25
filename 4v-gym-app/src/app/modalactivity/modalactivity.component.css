@@ -1,0 +1,17 @@
+.modal-header, 
+.modal-body,
+.modal-footer {
+    border:none;
+}
+
+select {
+    background-color: #d2d5d8;
+    border: #d2d5d8;
+    max-width: 80%;
+}
+
+#btn-modal {
+    background-color: #ca1c1c;
+    color: white;
+    padding: 0px 2em;
+}

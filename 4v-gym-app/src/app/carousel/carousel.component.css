@@ -17,8 +17,7 @@ span,
     max-height: 50px;
 }
 
-#img-person, 
-#img-addperson {
+#img-person {
     max-width: 7em;
 }
 
@@ -29,16 +28,4 @@ span,
 
 .form-control {
     max-width: 50%;
-}
-
-#btn-modal {
-    background-color: #ca1c1c;
-    color: white;
-    padding: 0px 2em;
-}
-
-.modal-header, 
-.modal-body,
-.modal-footer {
-    border:none;
 }

@@ -1,0 +1,17 @@
+span {
+    color: white;
+    font-size: 1.75em;
+    font-weight: bolder;
+}
+
+#free {
+    background-color:rgb(6, 115, 6)
+}
+
+img {
+    max-width: 40px;
+}
+
+p {
+    font-weight: bolder;
+}

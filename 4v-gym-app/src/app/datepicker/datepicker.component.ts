@@ -12,5 +12,5 @@ import { DailyboardComponent } from '../dailyboard/dailyboard.component';
   styleUrl: './datepicker.component.css'
 })
 export class DatepickerComponent {
-  selected: Date | null | undefined;
+  selectedDay: Date | null = new Date(Date.now());
 }

@@ -15,7 +15,7 @@ export class CarouselComponent {
 
   constructor(public instructorService: InstructorService) { }
 
-  instructors = this.instructorService.generateInstructors();
+  instructors = this.instructorService.instructors;
 
   currentIndex = 0;
   instructorsInScreen: Instructor[] = this.getInstructorsInScreen();
@@ -33,11 +33,17 @@ export class CarouselComponent {
   private getInstructorsInScreen(): Instructor[] {
     const nextIndex = (this.currentIndex + 1) % this.instructors.length;
     const previousIndex = (this.currentIndex - 1 + this.instructors.length) % this.instructors.length;
-
     return [
       this.instructors[previousIndex],
       this.instructors[this.currentIndex],
       this.instructors[nextIndex],
     ];
   }
+
+
+  /*
+  MANEJAMOS EL BUSCADOR DEL CAROUSEL
+  */
+
+
 }

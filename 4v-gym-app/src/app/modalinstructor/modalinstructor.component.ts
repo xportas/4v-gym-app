@@ -30,5 +30,7 @@ export class ModalinstructorComponent {
     this.name.reset();
     this.email.reset();
     this.phone.reset();
+
+    console.log(this.instructorService.instructors)
   }
 }

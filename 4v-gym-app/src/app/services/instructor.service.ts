@@ -44,4 +44,13 @@ export class InstructorService {
     this.instructors.push(inst);
   }
 
+  removeInstructor(inst:Instructor){
+    
+  }
+
+  editInstructor(instructorToEdit:Instructor, newName:string, newEmail:string, newPhone:number){
+    instructorToEdit.name = newName;
+    instructorToEdit.email = newEmail;
+    instructorToEdit.phoneNumber = newPhone;
+  }
 }

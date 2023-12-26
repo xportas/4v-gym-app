@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalinstructorComponent } from '../modalinstructor/modalinstructor.component';
-import { InstructorService } from '../services/instructor.service';
+import { Instructor, InstructorService } from '../services/instructor.service';
 
 
 @Component({
@@ -11,5 +11,19 @@ import { InstructorService } from '../services/instructor.service';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
+
+  currentIndex: number = 0;
+
+  constructor(public instructorService: InstructorService) { }
+
+  nextInstructors() {
+    // Avanzar al siguiente instructor
+    this.currentIndex = (this.currentIndex + 1) % this.instructorService.instructors.length;
+  }
+
+  previousInstructors() {
+    // Retroceder al instructor anterior
+    this.currentIndex = (this.currentIndex - 1 + this.instructorService.instructors.length) % this.instructorService.instructors.length;
+  }
 
 }

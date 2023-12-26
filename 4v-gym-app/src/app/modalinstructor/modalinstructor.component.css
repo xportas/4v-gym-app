@@ -8,6 +8,10 @@ input {
     max-width: 55%;
 }
 
+.alert {
+    max-width: 55%;
+}
+
 #btn-modal {
     background-color: #ca1c1c;
     color: white;
@@ -18,4 +22,8 @@ input {
 .modal-body,
 .modal-footer {
     border:none;
+}
+
+.modal-footer {
+    padding-bottom: 3em;
 }

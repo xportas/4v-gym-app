@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalinstructorComponent } from '../modalinstructor/modalinstructor.component';
+import { InstructorService } from '../services/instructor.service';
 
 
 @Component({

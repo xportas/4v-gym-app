@@ -1,12 +1,12 @@
 <nav class="navbar fixed-bottom navbar-light" id="no-gutters">
     <div class="container-fluid d-flex p-0">
-        <div class="col-6 align-items-center  justify-content-center d-flex" id="selectable">
+        <div class="col-6 align-items-center  justify-content-center d-flex" id="selectable" (click)="goSchedule()" [ngClass]="showing_carousel ? '' : 'selected-true'">
             <div class="col-6 text-center">
                 <img src="../../assets/calendarclock.svg" class="img-fluid" alt="activities-logo">
                 <span>ACTIVIDADES</span>
             </div>
         </div>
-        <div class="col-6 align-items-center  justify-content-center d-flex" id="selectable">
+        <div class="col-6 align-items-center  justify-content-center d-flex" id="selectable" (click)="goInstructors()" [ngClass]="showing_carousel ? 'selected-true' : ''">
             <div class="col-6 text-center">
                 <img src="../../assets/person.svg" class="img-fluid" alt="instructor-logo">
                 <span>MONITORES</span>

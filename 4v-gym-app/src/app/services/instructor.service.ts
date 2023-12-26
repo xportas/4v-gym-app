@@ -40,5 +40,8 @@ export class InstructorService {
 
   instructors: Instructor[] = this.getInstructors();
 
+  addInstructor(inst:Instructor) {
+    this.instructors.push(inst);
+  }
 
 }

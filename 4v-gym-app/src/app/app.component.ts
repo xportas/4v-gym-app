@@ -18,6 +18,9 @@ export class AppComponent {
 
   showing_carousel: Boolean = false;
 
-
+  // Método del componente hijo que envía el nuevo valor al componente padre
+  onCarouselChanged(value: Boolean) {
+    this.showing_carousel = value;
+  }
 
 }

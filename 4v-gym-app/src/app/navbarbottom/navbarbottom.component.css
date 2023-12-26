@@ -21,7 +21,7 @@ span {
     border-top: 5px solid #ca1c1c
 }
 
-#selectable:active {
+.selected-true {/* style when is selected */
     border-top: 5px solid #ca1c1c
 }
 

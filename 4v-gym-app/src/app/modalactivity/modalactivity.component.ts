@@ -18,9 +18,9 @@ export class ModalactivityComponent {
   instOne = new FormControl('', [Validators.required]);
   instTwo = new FormControl('');
 
-  date = 
+  // TODO: coger fecha del datepicker
 
-  createActivity() {
+  /* createActivity() {
     const newActivity = new Activity();
     this.activityService.addActivity(newActivity);
 
@@ -28,6 +28,6 @@ export class ModalactivityComponent {
     this.actType.reset();
     this.instOne.reset();
     this.instTwo.reset();
-  }
+  } */
 
 }

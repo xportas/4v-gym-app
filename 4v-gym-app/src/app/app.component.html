@@ -3,5 +3,5 @@
 <app-schedule *ngIf="!showing_carousel"></app-schedule>
 <app-carousel *ngIf="showing_carousel"></app-carousel>
 
-<!-- Primero bindeamos al hijo [], después el hijo devuelve nuevo valor al padre() -->
+<!-- Primero bindeamos al hijo [], después el hijo devuelve nuevo valor al padre () -->
 <app-navbarbottom [showing_carousel]="showing_carousel" (carouselChanged)="onCarouselChanged($event)"></app-navbarbottom>

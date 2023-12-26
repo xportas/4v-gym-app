@@ -41,7 +41,7 @@ export class ActivityService {
   constructor() { }
 
 
-  generateActivities(): Activity[] {
+  /* generateActivities(): Activity[] {
     const activities: Activity[] = [
       new Activity(EnumNames.BodyPump, new Date('7 Jan 2024 11:00:00 +0000'), [this.instructorService.instructors[0], this.instructorService.instructors[1]]),
       new Activity(EnumNames.Pilates, new Date('7 Jan 2024 18:00:00 +0000'), [this.instructorService.instructors[2], this.instructorService.instructors[3]]),
@@ -50,13 +50,13 @@ export class ActivityService {
       new Activity(EnumNames.Spinning, new Date('9 Jan 2024 14:00:00 +0000'), [this.instructorService.instructors[1], this.instructorService.instructors[2]]),
     ];
     return this.activities;
-  }
+  } */
 
 
-  activities: Activity[] = this.generateActivities();
+  //activities: Activity[] = this.generateActivities();
 
-  addActivity(act:Activity) {
-    this.activities.push(act);
-  }
+  // addActivity(act:Activity) {
+  //   this.activities.push(act);
+  // }
 
 }

@@ -28,7 +28,8 @@
 
         <div class="col-10">
             <div class="row g-2">
-                <div class="col-4">
+                
+                <div class="col-4" *ngFor="let instructor of instructorsInScreen">
                     <div class="card justify-content-center align-items-center">
                         <div class="row g-0">
                             <div class="col-2 d-flex align-items-start">
@@ -46,61 +47,9 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <p class="card-title">Nombre monitor</p>
-                            <p class="card-text">correo0correo.es</p>
-                            <p class="card-text">123456789</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-4">
-                    <div class="card justify-content-center align-items-center">
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-start">
-                                <button class="btn">
-                                    <img src="../../assets/trash.svg" id="img-drop-edit">
-                                </button>
-                            </div>
-                            <div class="col-8 d-flex justify-content-center">
-                                <img src="../../assets/person.svg" id="img-person" class="card-img-top img-fluid">
-                            </div>
-                            <div class="col-2 d-flex justify-content-end align-items-start">
-                                <button class="btn">
-                                    <img src="../../assets/edit.svg" id="img-drop-edit">
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-title">Nombre monitor</p>
-                            <p class="card-text">correo0correo.es</p>
-                            <p class="card-text">123456789</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-4">
-                    <div class="card justify-content-center align-items-center">
-                        <div class="row g-0">
-                            <div class="col-2 d-flex align-items-start">
-                                <button class="btn">
-                                    <img src="../../assets/trash.svg" id="img-drop-edit">
-                                </button>
-                            </div>
-                            <div class="col-8 d-flex justify-content-center">
-                                <img src="../../assets/person.svg" id="img-person" class="card-img-top img-fluid">
-                            </div>
-                            <div class="col-2 d-flex justify-content-end align-items-start">
-                                <button class="btn">
-                                    <img src="../../assets/edit.svg" id="img-drop-edit">
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-title">Nombre monitor</p>
-                            <p class="card-text">correo0correo.es</p>
-                            <p class="card-text">123456789</p>
+                            <p class="card-title">{{instructor.name}}</p>
+                            <p class="card-text">{{instructor.email}}</p>
+                            <p class="card-text">{{instructor.phoneNumber}}</p>
                         </div>
                     </div>
                 </div>

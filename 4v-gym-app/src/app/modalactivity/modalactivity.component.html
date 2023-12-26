@@ -39,8 +39,8 @@
 
             <div class="modal-footer d-flex justify-content-center align-items-center g-0 mb-3">
                 <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-6">
-                        <button class="btn rounded-4" id="btn-modal" [disabled]="actType.invalid || instOne.invalid" (click)="createActivity(actType.value , instOne.value, instTwo.value)">ACEPTAR</button>
+                    <div class="col-6">     <!--(click)="createActivity(actType.value , instOne.value, instTwo.value)"-->
+                        <button class="btn rounded-4" id="btn-modal" [disabled]="actType.invalid || instOne.invalid">ACEPTAR</button>
                     </div>
                     <div class="col-6">
                         <button class="btn rounded-4" data-bs-dismiss="modal" id="btn-modal">CANCELAR</button>

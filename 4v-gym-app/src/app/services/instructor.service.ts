@@ -23,7 +23,7 @@ export class InstructorService {
 
   constructor() { }
 
-  getInstructors(): Instructor[] {
+  generateInstructors(): Instructor[] {
     const instructors: Instructor[] = [
       new Instructor('Xabier Portas', 'xportas@example.com', 123456789),
       new Instructor('Miguel Goyena', 'miguel@example.com', 987654321),
@@ -38,7 +38,7 @@ export class InstructorService {
     return instructors;
   }
 
-  instructors: Instructor[] = this.getInstructors();
+  instructors: Instructor[] = this.generateInstructors();
 
   addInstructor(inst:Instructor) {
     this.instructors.push(inst);

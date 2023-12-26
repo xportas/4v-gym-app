@@ -15,4 +15,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
 })
 export class AppComponent {
   title = '4v-gym-app';
+
+  showing_carousel: Boolean = false;
+
+
+
 }

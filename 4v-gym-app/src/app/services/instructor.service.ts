@@ -35,7 +35,6 @@ export class InstructorService {
       new Instructor('Lúa Castro', 'luacastro@example.com', 666666666),
       new Instructor('Michael Jordan', 'michael@example.com', 444444444),
     ];
-
     return instructors;
   }
 

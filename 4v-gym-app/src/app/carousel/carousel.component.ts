@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { ModalinstructorComponent } from '../modalinstructor/modalinstructor.component';
 import { Instructor, InstructorService } from '../services/instructor.service';
 import { NgFor } from '@angular/common';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [ModalinstructorComponent, NgFor],
+  imports: [ModalinstructorComponent, NgFor, ReactiveFormsModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
@@ -44,6 +45,26 @@ export class CarouselComponent {
   /*
   MANEJAMOS EL BUSCADOR DEL CAROUSEL
   */
+  searchText = new FormControl('');
+
+  ngOnInit() {
+    // Escuchar cambios en el FormControl
+    this.searchText.valueChanges.subscribe(() => {
+      this.filterInstructors();
+    });
+  }
+
+  filterInstructors() {
+    const searchTerm = this.searchText.value?.toLowerCase() || '';
+    if (searchTerm == ''){
+      this.instructorsInScreen = this.getInstructorsInScreen();
+      return;
+    }
+    this.instructorsInScreen = this.instructors.filter(instructor =>
+      instructor.name.toLowerCase().includes(searchTerm) ||
+      instructor.email.toLowerCase().includes(searchTerm)
+    ).slice(0, 3);
+  }
 
 
 }

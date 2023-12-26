@@ -5,7 +5,7 @@
         <div class="col-10 d-flex align-items-center justify-content-center">
             <div class="input-group d-flex justify-content-center">
                 <span class="input-group-text"><img src="../../assets/search.svg" id="img-search"></span>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="input-group-left" #search>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="input-group-left" [formControl]="searchText">
             </div>
         </div>
         <div class="col-2">
@@ -67,7 +67,5 @@
 
     <!-- MODAL NEW INSTRUCTOR -->
     <app-modalinstructor></app-modalinstructor>
-
-
 
 </div>

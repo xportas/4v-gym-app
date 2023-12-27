@@ -13,4 +13,20 @@ import { DailyboardComponent } from '../dailyboard/dailyboard.component';
 })
 export class DatepickerComponent {
   selectedDay: Date | null = new Date(Date.now());
+
+  previousDay(){
+    if (this.selectedDay) {
+      this.selectedDay = new Date(this.selectedDay);
+      this.selectedDay.setDate(this.selectedDay.getDate() - 1);
+    }
+  }
+
+  nextDay(){
+    if (this.selectedDay) {
+      this.selectedDay = new Date(this.selectedDay);
+      this.selectedDay.setDate(this.selectedDay.getDate() + 1);
+    }
+  }
+
+
 }

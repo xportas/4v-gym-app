@@ -50,8 +50,7 @@ export class CarouselComponent {
   }
 
   editInstructor(instructor: Instructor){
-    let position = this.instructors.indexOf(instructor);
-    // TODO COMPLETAR
+    
   }
 
 

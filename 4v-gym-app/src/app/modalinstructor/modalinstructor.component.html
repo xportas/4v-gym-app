@@ -39,7 +39,7 @@
             <div class="modal-footer d-flex justify-content-center align-items-center g-0">
                 <div class="row d-flex align-items-center justify-content-center">
                     <div class="col-6">
-                        <button class="btn rounded-4" id="btn-modal" [disabled]="name.invalid || email.invalid || phone.invalid" (click)="createInstructor(name.value , email.value, phone.value)">ACEPTAR</button>
+                        <button class="btn rounded-4" id="btn-modal" [disabled]="name.invalid || email.invalid || phone.invalid" (click)="createInstructor(name.value , email.value, phone.value)" data-bs-dismiss="modal">ACEPTAR</button>
                     </div>
                     <div class="col-6">
                         <button class="btn rounded-4" data-bs-dismiss="modal" id="btn-modal">CANCELAR</button>

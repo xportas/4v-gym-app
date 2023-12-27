@@ -23,7 +23,7 @@ export class ModalinstructorComponent {
   phone = new FormControl('', [Validators.required, Validators.pattern(/^\d+$/)]);
 
   createInstructor(name:any, email:any, phone:any) {
-    const newInstructor = new Instructor(name, email, phone);
+    const newInstructor = new Instructor(this.instructorService.maxId++, name, email, phone);
     this.instructorService.addInstructor(newInstructor);
 
     // Restablecer los valores de los controles después de agregar el instructor

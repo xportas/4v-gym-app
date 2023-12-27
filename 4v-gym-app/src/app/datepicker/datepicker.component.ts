@@ -15,8 +15,10 @@ export class DatepickerComponent {
   monthsOfTheYear = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
   
   selectedDay: Date | null = new Date(Date.now());
+  
   dateToShow: string = this.selectedDay?`${this.selectedDay.getDate()}  ${this.monthsOfTheYear[this.selectedDay.getMonth()]}  ${this.selectedDay.getFullYear()}`:'';
 
+  /* DATE BOX */
   previousDay() {
     if (this.selectedDay) {
       this.selectedDay = new Date(this.selectedDay);
@@ -36,6 +38,6 @@ export class DatepickerComponent {
       this.dateToShow = `${this.selectedDay.getDate()}  ${this.monthsOfTheYear[this.selectedDay.getMonth()]}  ${this.selectedDay.getFullYear()}`;
     }
   }
-
+  /* END DATE BOX */
 
 }

@@ -1,42 +1,46 @@
-<div class="row">
-    <div class="col-3">
-        <mat-card class="demo-inline-calendar-card">
-            <mat-calendar [(selected)]="selectedDay"></mat-calendar>
-        </mat-card>
-    </div>
+<div class="container-fluid">
 
-
-    <div class="col-9">
-
-        <!-- THIS ROW CONTAINS DATE AND ARROWS -->
-        <div class="row d-flex justify-content-center">
-
-            <div class="col-1 d-flex align-items-center justify-content-center">
-                <button class="btn" (click)="previousDay()">
-                    <img src="../../assets/leftarrow.svg">
-                </button>
-            </div>
-
-            <div class="col-5 d-flex align-items-center justify-content-center">
-                <p id="showing-date">{{dateToShow}}</p>
-            </div>
-
-            <div class="col-1 d-flex align-items-center justify-content-center">
-                <button class="btn" (click)="nextDay()">
-                    <img src="../../assets/rightarrow.svg">
-                </button>
-            </div>
-
+    <div class="row">
+        <div class="col-3">
+            <mat-card class="demo-inline-calendar-card">
+                <mat-calendar [(selected)]="selectedDay"></mat-calendar>
+            </mat-card>
         </div>
 
 
-        <!-- THIS ROW CONTAINS DAILY BOARD -->
-        <div class="row d-flex justify-content-center">
-            <div class="col-8">
-                <app-dailyboard></app-dailyboard>
-            </div>
-        </div>
+        <div class="col-9">
 
+            <!-- THIS ROW CONTAINS DATE AND ARROWS -->
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-1 d-flex align-items-center justify-content-center">
+                    <button class="btn" (click)="previousDay()">
+                        <img src="../../assets/leftarrow.svg">
+                    </button>
+                </div>
+
+                <div class="col-5 d-flex align-items-center justify-content-center">
+                    <p id="showing-date">{{dateToShow}}</p>
+                </div>
+
+                <div class="col-1 d-flex align-items-center justify-content-center">
+                    <button class="btn" (click)="nextDay()">
+                        <img src="../../assets/rightarrow.svg">
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- THIS ROW CONTAINS DAILY BOARD -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-8">
+                    <app-dailyboard></app-dailyboard>
+                </div>
+            </div>
+
+
+        </div>
 
     </div>
 

@@ -4,13 +4,13 @@ import { RouterOutlet } from '@angular/router';
 import { NavbartopComponent } from './navbartop/navbartop.component';
 import { NavbarbottomComponent } from './navbarbottom/navbarbottom.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbartopComponent, NavbarbottomComponent, CarouselComponent, ScheduleComponent, ReactiveFormsModule],
+  imports: [CommonModule, RouterOutlet, NavbartopComponent, NavbarbottomComponent, CarouselComponent, ReactiveFormsModule, DatepickerComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

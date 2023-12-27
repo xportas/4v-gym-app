@@ -42,6 +42,21 @@ export class CarouselComponent {
   }
 
 
+  deleteInstructor(instructor: Instructor){
+    let position = this.instructors.indexOf(instructor);
+    this.instructors.splice(position, 1);
+    this.nextInstructors();
+    this.previousInstructors();
+  }
+
+  editInstructor(instructor: Instructor){
+    let position = this.instructors.indexOf(instructor);
+    // TODO COMPLETAR
+  }
+
+
+
+
   /*
   MANEJAMOS EL BUSCADOR DEL CAROUSEL
   */

@@ -1,3 +1,7 @@
+#row-container {
+    min-height: 7em;
+}
+
 span {
     color: white;
     font-size: 1.75em;

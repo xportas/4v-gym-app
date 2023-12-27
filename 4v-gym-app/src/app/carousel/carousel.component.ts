@@ -75,8 +75,7 @@ export class CarouselComponent {
       return;
     }
     this.instructorsInScreen = this.instructors.filter(instructor =>
-      instructor.name.toLowerCase().includes(searchTerm) ||
-      instructor.email.toLowerCase().includes(searchTerm)
+      instructor.name.toLowerCase().includes(searchTerm)
     ).slice(0, 3);
   }
 

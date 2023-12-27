@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { InstructorService, Instructor } from './instructor.service';
 
 export enum EnumNames { 'BodyPump', 'Pilates', 'Spinning' };
@@ -12,7 +12,7 @@ export class Activity {
   public instructors: Instructor[];
   
   constructor(
-    public id: number,
+    @Inject('number') public id: number,
     public name: EnumNames,
     public activity_date: Date,
     public instructor1: Instructor,

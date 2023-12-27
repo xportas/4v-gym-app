@@ -5,3 +5,8 @@
 img {
     max-width: 50px;
 }
+
+#showing-date {
+    font-size: 300%;
+    color: #7c7e7f;
+}

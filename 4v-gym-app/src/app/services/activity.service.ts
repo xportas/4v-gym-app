@@ -38,6 +38,8 @@ export class Activity {
 })
 export class ActivityService {
 
+  maxId: number = 5;
+
   constructor(private instructorService: InstructorService) { }
 
   generateActivities(): Activity[] {
@@ -56,5 +58,6 @@ export class ActivityService {
 
   addActivity(act: Activity) {
     this.activities.push(act);
+    this.maxId++;
   }
 }

@@ -50,6 +50,8 @@ export class ActivityService {
 
   activities: Activity[] = this.generateActivities();
 
+  instructors = this.instructorService.instructors;
+
   addActivity(act: Activity) {
     this.activities.push(act);
   }

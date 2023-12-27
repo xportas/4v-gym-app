@@ -15,3 +15,21 @@ img {
 p {
     font-weight: bolder;
 }
+
+/* ACTIVITY STYLE */
+#row-activity {
+    background-color: #d2d5d8;
+}
+
+#img-act-type {
+    max-width: 65px;
+}
+
+#img-trash,
+#img-edit {
+    max-width: 30px;
+}
+
+#img-person {
+    max-width: 65px;
+}

@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-3">
             <mat-card class="demo-inline-calendar-card">
-                <mat-calendar [(selected)]="selectedDay"></mat-calendar>
+                <mat-calendar [(selected)]="selectedDay" (selectedChange)="onDateSelected($event)"></mat-calendar>
             </mat-card>
         </div>
 

@@ -60,6 +60,9 @@ export class DailyboardComponent {
           }
         }
       }
+      console.log(this.act11h);
+      console.log(this.act14h);
+      console.log(this.act18h);
     }
   } // ngOnChanges function close
 

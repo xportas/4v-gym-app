@@ -5,7 +5,6 @@ import { InstructorService, Instructor } from './instructor.service';
 export class Activity {
   
   public image: string;
-  public instructors: Instructor[];
   
   constructor(
     public id: number,
@@ -14,15 +13,16 @@ export class Activity {
     public instructor1: Instructor,
     public instructor2?: Instructor,
   ) {
-    if (name === 'BodyPump' && instructor2) {
+    if (name === 'BodyPump' && instructor2 !== undefined) {
       this.image = '../../assets/bodypump.svg';
-      this.instructors = [instructor1, instructor2];
-    } else if (name === 'Pilates') {
+      this.instructor1 = instructor1;
+      this.instructor2 = instructor2;
+    } else if (name === 'Pilates' && instructor2 === undefined) {
       this.image = '../../assets/pilates.svg';
-      this.instructors = [instructor1];
+      this.instructor1 = instructor1;
     } else {
       this.image = '../../assets/spinning.svg';
-      this.instructors = [instructor1];
+      this.instructor1 = instructor1;
     }
     this.id = id;
     this.activity_date = activity_date;

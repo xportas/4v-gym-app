@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { Instructor, InstructorService } from '../services/instructor.service';
 import { NgIf } from '@angular/common';
@@ -16,13 +16,14 @@ import { NgIf } from '@angular/common';
 })
 export class ModalinstructorComponent {
 
-  constructor(public instructorService: InstructorService) { }
-
   name = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required, Validators.email]);
   phone = new FormControl('', [Validators.required, Validators.pattern(/^\d+$/)]);
 
-  createInstructor(name:any, email:any, phone:any) {
+  constructor(public instructorService: InstructorService) { }
+
+
+  createInstructor(name: any, email: any, phone: any) {
     const newInstructor = new Instructor(this.instructorService.maxId++, name, email, phone);
     this.instructorService.addInstructor(newInstructor);
 

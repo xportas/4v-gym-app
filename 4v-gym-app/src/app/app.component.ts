@@ -7,6 +7,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -23,5 +25,4 @@ export class AppComponent {
   onCarouselChanged(value: Boolean) {
     this.showing_carousel = value;
   }
-
 }

@@ -3,12 +3,14 @@ import { ModalinstructorComponent } from '../modalinstructor/modalinstructor.com
 import { Instructor, InstructorService } from '../services/instructor.service';
 import { NgFor } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ModaleditinstructorComponent } from '../modaleditinstructor/modaleditinstructor.component';
+
 
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [ModalinstructorComponent, NgFor, ReactiveFormsModule],
+  imports: [ModalinstructorComponent, NgFor, ReactiveFormsModule, ModaleditinstructorComponent],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
@@ -42,6 +44,8 @@ export class CarouselComponent {
   }
 
 
+
+    /* DELETE AND EDIT FUNCTIONS */
   deleteInstructor(instructor: Instructor){
     let position = this.instructors.indexOf(instructor);
     this.instructors.splice(position, 1);
@@ -49,20 +53,30 @@ export class CarouselComponent {
     this.previousInstructors();
   }
 
-  editInstructor(instructor: Instructor){
-    
-  }
+  instructorSended?: Instructor = undefined;
 
+  editInstructor(instructor: Instructor){
+    this.instructorSended = instructor;
+  }
+  // Método del componente hijo que envía el nuevo valor al componente padre
+  onBooleanEditChanged(value: boolean) {
+    this.instructorSended = undefined;
+    if (value){
+      this.nextInstructors();
+      this.previousInstructors();
+    }
+  }
+    /* END OF DELETE AND EDIT FUNCTIONS */
 
 
 
   /*
-  MANEJAMOS EL BUSCADOR DEL CAROUSEL
+  CAROUSEL FILTER
   */
   searchText = new FormControl('');
 
   ngOnInit() {
-    // Escuchar cambios en el FormControl
+    // Listening changes in FormControl
     this.searchText.valueChanges.subscribe(() => {
       this.filterInstructors();
     });

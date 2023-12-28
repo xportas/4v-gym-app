@@ -41,7 +41,7 @@
                                 <img src="../../assets/person.svg" id="img-person" class="card-img-top img-fluid">
                             </div>
                             <div class="col-2 d-flex justify-content-end align-items-start">
-                                <button class="btn" (click)="editInstructor(instructor)">
+                                <button class="btn" (click)="editInstructor(instructor)" data-bs-toggle="modal" data-bs-target="#modal-edit-instructor">
                                     <img src="../../assets/edit.svg" id="img-drop-edit">
                                 </button>
                             </div>
@@ -67,5 +67,7 @@
 
     <!-- MODAL NEW INSTRUCTOR -->
     <app-modalinstructor></app-modalinstructor>
+    <!-- MODAL EDIT INSTRUCTOR -->
+    <app-modaleditinstructor [instructorSended]="instructorSended" (resetInstructor)="onBooleanEditChanged($event)"></app-modaleditinstructor>
 
 </div>

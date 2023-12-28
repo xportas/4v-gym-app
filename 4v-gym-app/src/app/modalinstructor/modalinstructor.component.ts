@@ -34,4 +34,11 @@ export class ModalinstructorComponent {
 
     console.log(this.instructorService.instructors);
   }
+
+  resetFormValues(){
+    // Function to reset all the values into form
+    this.name.reset();
+    this.email.reset();
+    this.phone.reset();
+  }
 }

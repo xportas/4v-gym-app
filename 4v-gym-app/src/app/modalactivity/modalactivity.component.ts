@@ -20,6 +20,7 @@ export class ModalactivityComponent {
   allActivities: Activity[] = this.activitiesService.activities;
   allInstructors: Instructor[] = this.instructorService.instructors;
 
+  // variable to show (or not) the select of assistant instructor
   instrAssistant: boolean = false;
 
   actType = new FormControl('', [Validators.required]);
@@ -29,6 +30,13 @@ export class ModalactivityComponent {
   onActTypeChange() {
     // if actType === BodyPump user can choose anotherone assistant instructor
     this.instrAssistant = this.actType.value === 'BodyPump';
+  }
+
+  resetFormValues(){
+    // Function to reset all the values into form
+    this.actType.setValue('');
+    this.instOne.setValue('');
+    this.instTwo.setValue('');
   }
 
 }

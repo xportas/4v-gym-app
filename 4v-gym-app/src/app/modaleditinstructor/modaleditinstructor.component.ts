@@ -43,5 +43,10 @@ export class ModaleditinstructorComponent {
     this.resetInstructor.emit(true);
   }
 
-
+  resetFormValues(){
+    // Function to reset all the values into form
+    this.name.reset();
+    this.email.reset();
+    this.phone.reset();
+  }
 }

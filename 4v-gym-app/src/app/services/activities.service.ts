@@ -1,18 +1,17 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { InstructorService, Instructor } from './instructor.service';
+
 
 export enum EnumNames { 'BodyPump', 'Pilates', 'Spinning' };
 
-@Injectable({
-  providedIn: 'root'
-})
+
 export class Activity {
   
   public image: string;
   public instructors: Instructor[];
   
   constructor(
-    @Inject('number') public id: number,
+    public id: number,
     public name: EnumNames,
     public activity_date: Date,
     public instructor1: Instructor,
@@ -36,7 +35,7 @@ export class Activity {
 @Injectable({
   providedIn: 'root'
 })
-export class ActivityService {
+export class ActivitiesService {
 
   maxId: number = 5;
 
@@ -60,4 +59,6 @@ export class ActivityService {
     this.activities.push(act);
     this.maxId++;
   }
+
+
 }

@@ -3,11 +3,12 @@ import { ModalactivityComponent } from '../modalactivity/modalactivity.component
 import { Input } from '@angular/core';
 import { InstructorService, Instructor } from '../services/instructor.service';
 import { ActivitiesService, Activity } from '../services/activities.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-dailyboard',
   standalone: true,
-  imports: [ModalactivityComponent],
+  imports: [ModalactivityComponent, NgIf],
   templateUrl: './dailyboard.component.html',
   styleUrl: './dailyboard.component.css'
 })
@@ -25,7 +26,11 @@ export class DailyboardComponent {
   act18h: any;
 
 
-  // Function that is listening changes into selectedDate and add activities to currentActivities
+  /* 
+  *
+  Function that is listening changes into selectedDate and add activities to currentActivities
+  *
+  */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['selectedDay']) {
       // Reset currentActivities

@@ -2,7 +2,7 @@ import { Component, SimpleChanges } from '@angular/core';
 import { ModalactivityComponent } from '../modalactivity/modalactivity.component';
 import { Input } from '@angular/core';
 import { InstructorService, Instructor } from '../services/instructor.service';
-import { ActivityService, Activity } from '../services/activity.service';
+import { ActivitiesService, Activity } from '../services/activities.service';
 
 @Component({
   selector: 'app-dailyboard',
@@ -14,7 +14,7 @@ import { ActivityService, Activity } from '../services/activity.service';
 export class DailyboardComponent {
 
   // Initializes services
-  constructor(public activityService: ActivityService, public instructorService: InstructorService) { }
+  constructor(public activityService: ActivitiesService, public instructorService: InstructorService) { }
 
   // Getting its father´s data
   @Input() selectedDay: any;

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
-import { ActivityService, Activity, EnumNames } from '../services/activity.service';
+import { ActivitiesService, Activity, EnumNames } from '../services/activities.service';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -12,10 +12,10 @@ import { NgIf } from '@angular/common';
 })
 export class ModalactivityComponent {
 
-  constructor() { }
+  constructor(public activitiesService: ActivitiesService, public enumNames: EnumNames) { }
 
-  // allActivities: Activity[] = this.activityService.activities;
-  // actTypes: EnumNames = this.enumNames;
+  allActivities: Activity[] = this.activitiesService.activities;
+  actTypes: EnumNames = this.enumNames;
 
   actType = new FormControl('', [Validators.required]);
   instOne = new FormControl('', [Validators.required]);

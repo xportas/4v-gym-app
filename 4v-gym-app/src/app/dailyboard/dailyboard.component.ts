@@ -20,14 +20,18 @@ export class DailyboardComponent {
   @Input() selectedDay: any;
 
   // Activities in this day
-  currentActivities: Activity[] = [];
+  act11h: any;
+  act14h: any;
+  act18h: any;
 
 
   // Function that is listening changes into selectedDate and add activities to currentActivities
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['selectedDay']) {
       // Reset currentActivities
-      this.currentActivities = [];
+      this.act11h = undefined;
+      this.act14h = undefined;
+      this.act18h = undefined;
 
       // Get new value of selectedDay
       let newSelectedDay = changes['selectedDay'].currentValue;
@@ -36,13 +40,21 @@ export class DailyboardComponent {
       let aux = this.activitiesService.activities;
       for (let i = 0; i < aux.length; i++) {
         if (aux[i].activity_date.getFullYear() === newSelectedDay.getFullYear() &&
-          aux[i].activity_date.getMonth() === newSelectedDay.getMonth() &&
-          aux[i].activity_date.getDate() === newSelectedDay.getDate()) {
-          this.currentActivities.push(aux[i]);
+        aux[i].activity_date.getMonth() === newSelectedDay.getMonth() &&
+        aux[i].activity_date.getDate() === newSelectedDay.getDate()) {
+
+          if (aux[i].activity_date.getUTCHours() === 11) {
+            this.act11h = aux[i];
+          }
+          else if (aux[i].activity_date.getUTCHours() === 14) {
+            this.act14h = aux[i];
+          }
+          else {
+            this.act18h = aux[i];
+          }
         }
       }
-      console.log(this.currentActivities);
     }
-  }
+  } // ngOnChanges function close
 
-}
+} // class close

@@ -27,6 +27,9 @@ export class DailyboardComponent {
   act18h: any;
 
 
+  // Array to send data to modal
+  dataToModal:any[] = [];
+
   /* 
   *
   Function that is listening changes into selectedDate and add activities to currentActivities
@@ -65,5 +68,11 @@ export class DailyboardComponent {
       console.log(this.act18h);
     }
   } // ngOnChanges function close
+
+
+  sendDataToModal(hour: number){
+    this.dataToModal = [this.selectedDay, hour];
+  }
+
 
 } // class close

@@ -1,5 +1,5 @@
 <!-- ACTIVITY MODAL -->
-<app-modalactivity></app-modalactivity>
+<app-modalactivity [dataToModal]="dataToModal"></app-modalactivity>
 
 <div class="container-fluid">
 
@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-10 d-flex align-items-center justify-content-center pt-4"><span>FREE</span></div>
                 <div class="col-2 d-flex align-items-start justify-content-end">
-                    <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#modal-add-activity">
+                    <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#modal-add-activity" (click)="sendDataToModal(11)">
                         <img src="../../assets/plus.svg">
                     </button>
                 </div>
@@ -85,14 +85,14 @@
     <div class="row" id="row-container">
         
         <div class="col-2 d-flex align-items-center justify-content-center p-2">
-            <p>10:00<br>11:30</p>
+            <p>13:00<br>15:00</p>
         </div>
 
         <div *ngIf="!act14h" class="col-10 p-0" id="free">
             <div class="row">
                 <div class="col-10 d-flex align-items-center justify-content-center pt-4"><span>FREE</span></div>
                 <div class="col-2 d-flex align-items-start justify-content-end">
-                    <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#modal-add-activity">
+                    <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#modal-add-activity" (click)="sendDataToModal(14)">
                         <img src="../../assets/plus.svg">
                     </button>
                 </div>
@@ -161,14 +161,14 @@
     <div class="row" id="row-container">
         
         <div class="col-2 d-flex align-items-center justify-content-center p-2">
-            <p>10:00<br>11:30</p>
+            <p>17:30<br>19:00</p>
         </div>
 
         <div *ngIf="!act18h" class="col-10 p-0" id="free">
             <div class="row">
                 <div class="col-10 d-flex align-items-center justify-content-center pt-4"><span>FREE</span></div>
                 <div class="col-2 d-flex align-items-start justify-content-end">
-                    <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#modal-add-activity">
+                    <button class="btn p-0" data-bs-toggle="modal" data-bs-target="#modal-add-activity" (click)="sendDataToModal(18)">
                         <img src="../../assets/plus.svg">
                     </button>
                 </div>

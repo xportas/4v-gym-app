@@ -46,16 +46,15 @@ export class ModalactivityComponent {
 
 
   createNewActivity(actType: any, instOne: any, instTwo: any) {
-    let actDay = new Date;
-    actDay.setFullYear(this.dataToModal[0].getFullYear());
-    actDay.setMonth(this.dataToModal[0].getMonth());
-    actDay.setDate(this.dataToModal[0].getDate());
-    actDay.setUTCHours(this.dataToModal[1]);
+    let actDay = new Date(
+      this.dataToModal[0].getFullYear(),
+      this.dataToModal[0].getMonth(),
+      this.dataToModal[0].getDate(),
+      this.dataToModal[1],
+      0, 0, 0
+    );
     let instructorOne = this.instructorService.instructors.find(inst => inst.id === instOne);
-    let instructorTwo;
-    if (instTwo !== undefined){
-      instructorTwo = this.instructorService.instructors.find(inst => inst.id === instTwo);
-    }
+    let instructorTwo = instTwo !== undefined ? this.instructorService.instructors.find(inst => inst.id === instTwo) : undefined;
     
     let newActivity = new Activity(this.activitiesService.maxId++, actType, actDay, instructorOne || new Instructor(99, 'CLASS', 'email', -1), instructorTwo);
     this.activitiesService.addActivity(newActivity);
@@ -65,7 +64,6 @@ export class ModalactivityComponent {
     console.log('type: ' + actType);
     console.log('instructorOne: ' + instructorOne);
     console.log('instructorTwo: ' + instructorTwo);
-    console.log('data to modal: ' + this.dataToModal);
 
     // Reset values of form
     this.resetFormValues();

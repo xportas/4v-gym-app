@@ -64,6 +64,7 @@ export class ModalactivityComponent {
     console.log('type: ' + actType);
     console.log('instructorOne: ' + instructorOne);
     console.log('instructorTwo: ' + instructorTwo);
+    //TODO: los instructores son undefined, no sé por qué, la fecha se construye bien
 
     // Reset values of form
     this.resetFormValues();

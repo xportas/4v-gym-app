@@ -50,13 +50,4 @@ export class InstructorService {
     this.maxId++;
   }
 
-  removeInstructor(inst:Instructor){
-    
-  }
-
-  editInstructor(instructorToEdit:Instructor, newName:string, newEmail:string, newPhone:number){
-    instructorToEdit.name = newName;
-    instructorToEdit.email = newEmail;
-    instructorToEdit.phoneNumber = newPhone;
-  }
 }

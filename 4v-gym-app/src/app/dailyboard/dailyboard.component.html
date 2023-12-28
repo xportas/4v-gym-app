@@ -33,7 +33,7 @@
                 </div>
 
 
-                <div *ngIf="act11h.instructor2" class="col-3 d-flex flex-column align-items-center justify-content-center">
+                <div [ngClass]="{'invisible': act11h.instructor2  === undefined}" class="col-3 d-flex flex-column align-items-center justify-content-center">
                     <img src="../../assets/person.svg" class="img-fluid" id="img-person">
                     <p>{{act11h.instructor2.name}}</p>
                 </div>
@@ -109,7 +109,7 @@
                 </div>
 
 
-                <div *ngIf="act14h.instructor2" class="col-3 d-flex flex-column align-items-center justify-content-center">
+                <div [ngClass]="{'invisible': act14h.instructor2 === undefined}" class="col-3 d-flex flex-column align-items-center justify-content-center">
                     <img src="../../assets/person.svg" class="img-fluid" id="img-person">
                     <p>{{act14h.instructor2.name}}</p>
                 </div>
@@ -184,7 +184,7 @@
                 </div>
 
 
-                <div *ngIf="act18h.instructor2" class="col-3 d-flex flex-column align-items-center justify-content-center">
+                <div [ngClass]="{'invisible': act18h.instructor2  === undefined}" class="col-3 d-flex flex-column align-items-center justify-content-center">
                     <img src="../../assets/person.svg" class="img-fluid" id="img-person">
                     <p>{{act18h.instructor2.name}}</p>
                 </div>

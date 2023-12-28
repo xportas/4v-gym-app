@@ -4,11 +4,12 @@ import { Input } from '@angular/core';
 import { InstructorService, Instructor } from '../services/instructor.service';
 import { ActivitiesService, Activity } from '../services/activities.service';
 import { NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-dailyboard',
   standalone: true,
-  imports: [ModalactivityComponent, NgIf],
+  imports: [ModalactivityComponent, NgIf, NgClass],
   templateUrl: './dailyboard.component.html',
   styleUrl: './dailyboard.component.css'
 })

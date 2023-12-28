@@ -14,7 +14,7 @@ import { ActivitiesService, Activity } from '../services/activities.service';
 export class DailyboardComponent {
 
   // Initializes services
-  constructor(public activityService: ActivitiesService, public instructorService: InstructorService) { }
+  constructor(public activitiesService: ActivitiesService, public instructorService: InstructorService) { }
 
   // Getting its father´s data
   @Input() selectedDay: any;
@@ -26,18 +26,22 @@ export class DailyboardComponent {
   // Function that is listening changes into selectedDate and add activities to currentActivities
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['selectedDay']) {
+      // Reset currentActivities
+      this.currentActivities = [];
+
+      // Get new value of selectedDay
       let newSelectedDay = changes['selectedDay'].currentValue;
-      let aux = this.activityService.activities;
-      for (let i = 0; i < aux.length; i++){
-        if (aux[i].activity_date.getFullYear() == newSelectedDay.getFullYear() &&
-          aux[i].activity_date.getMonth() == newSelectedDay.getMonth() && 
-          aux[i].activity_date.getDay() == newSelectedDay.getDay()){
-            this.currentActivities.push(aux[i]);
-        }
-        if (this.currentActivities.length >= 3){
-          return;
+
+      // Get all the activities and add to currentactivities
+      let aux = this.activitiesService.activities;
+      for (let i = 0; i < aux.length; i++) {
+        if (aux[i].activity_date.getFullYear() === newSelectedDay.getFullYear() &&
+          aux[i].activity_date.getMonth() === newSelectedDay.getMonth() &&
+          aux[i].activity_date.getDate() === newSelectedDay.getDate()) {
+          this.currentActivities.push(aux[i]);
         }
       }
+      console.log(this.currentActivities);
     }
   }
 

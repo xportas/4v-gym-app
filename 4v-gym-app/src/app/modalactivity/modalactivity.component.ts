@@ -17,7 +17,7 @@ import { Input } from '@angular/core';
 export class ModalactivityComponent {
 
   //Recibimos variable del padre
-  @Input() dataToModal:any;
+  @Input() dataToModal: any;
 
   constructor(public activitiesService: ActivitiesService, public instructorService: InstructorService) { }
 
@@ -33,7 +33,7 @@ export class ModalactivityComponent {
 
 
   onActTypeChange() {
-    // if actType === BodyPump user can choose anotherone assistant instructor
+    // if actType === BodyPump user can choose one more assistant instructor
     this.instrAssistant = this.actType.value === 'BodyPump';
   }
 
@@ -50,21 +50,13 @@ export class ModalactivityComponent {
       this.dataToModal[0].getFullYear(),
       this.dataToModal[0].getMonth(),
       this.dataToModal[0].getDate(),
-      this.dataToModal[1],
-      0, 0, 0
-    );
-    let instructorOne = this.instructorService.instructors.find(inst => inst.id === instOne);
-    let instructorTwo = instTwo !== undefined ? this.instructorService.instructors.find(inst => inst.id === instTwo) : undefined;
-    
-    let newActivity = new Activity(this.activitiesService.maxId++, actType, actDay, instructorOne || new Instructor(99, 'CLASS', 'email', -1), instructorTwo);
-    this.activitiesService.addActivity(newActivity);
+      this.dataToModal[1], 0, 0, 0);
 
-    console.log('newActivity: ' + newActivity);
-    console.log('date: ' + actDay)
-    console.log('type: ' + actType);
-    console.log('instructorOne: ' + instructorOne);
-    console.log('instructorTwo: ' + instructorTwo);
-    //TODO: los instructores son undefined, no sé por qué, la fecha se construye bien
+    let instructorOne = this.instructorService.instructors.find(inst => inst.id == instOne);
+    let instructorTwo = instTwo !== undefined ? this.instructorService.instructors.find(inst => inst.id == instTwo) : undefined;
+
+    let newActivity = new Activity(++this.activitiesService.maxId, actType, actDay, instructorOne || new Instructor(99, 'CLASS', 'email', -1), instructorTwo);
+    this.activitiesService.addActivity(newActivity);
 
     // Reset values of form
     this.resetFormValues();

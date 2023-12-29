@@ -24,7 +24,7 @@ export class ModalinstructorComponent {
 
 
   createInstructor(name: any, email: any, phone: any) {
-    const newInstructor = new Instructor(this.instructorService.maxId++, name, email, phone);
+    const newInstructor = new Instructor(++this.instructorService.maxId, name, email, phone);
     this.instructorService.addInstructor(newInstructor);
 
     // Restablecer los valores de los controles después de agregar el instructor

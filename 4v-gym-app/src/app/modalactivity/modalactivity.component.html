@@ -19,7 +19,7 @@
                     <select class="form-select form-select-sm" aria-label="Small select" [formControl]="instOne">
                         <option disabled selected value="">Monitor</option>
                         <!-- For loop to show all the instructors -->
-                        <option *ngFor="let instructor of allInstructors; let i = index" value="{{instructor.id}}">{{instructor.name}}</option>
+                        <option *ngFor="let instructor of allInstructors" value="{{instructor.id}}">{{instructor.name}}</option>
                     </select>
                 </div>
 
@@ -27,7 +27,7 @@
                 <div *ngIf="instrAssistant" class="row d-flex align-items-center justify-content-center p-0 m-2">
                     <select class="form-select form-select-sm" aria-label="Small select" [formControl]="instTwo">
                         <option disabled selected value="">Monitor adjunto</option>
-                        <option *ngFor="let instructor of allInstructors; let i = index" value="{{instructor.id}}">{{instructor.name}}</option>
+                        <option *ngFor="let instructor of allInstructors" value="{{instructor.id}}">{{instructor.name}}</option>
                     </select>
                 </div>
 

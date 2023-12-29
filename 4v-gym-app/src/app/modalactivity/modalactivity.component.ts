@@ -58,6 +58,7 @@ export class ModalactivityComponent {
     let newActivity = new Activity(++this.activitiesService.maxId, actType, actDay, instructorOne || new Instructor(99, 'CLASS', 'email', -1), instructorTwo);
     this.activitiesService.addActivity(newActivity);
 
+    console.log(newActivity);
     // Reset values of form
     this.resetFormValues();
 

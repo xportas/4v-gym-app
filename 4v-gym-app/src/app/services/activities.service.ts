@@ -40,11 +40,11 @@ export class ActivitiesService {
 
   generateActivities(): Activity[] {
     return [
-      new Activity(1, 'BodyPump', new Date('7 Jan 2024 11:00:00 +0000'), this.instructorService.instructors[0], this.instructorService.instructors[1]),
-      new Activity(2, 'Pilates', new Date('7 Jan 2024 18:00:00 +0000'), this.instructorService.instructors[2]),
-      new Activity(3, 'BodyPump', new Date('8 Jan 2024 14:00:00 +0000'), this.instructorService.instructors[5], this.instructorService.instructors[4]),
-      new Activity(4, 'Spinning', new Date('9 Jan 2024 11:00:00 +0000'), this.instructorService.instructors[3]),
-      new Activity(5, 'Spinning', new Date('9 Jan 2024 14:00:00 +0000'), this.instructorService.instructors[1]),
+      new Activity(1, 'BodyPump', new Date('7 Jan 2024 10:00:00 +0000'), this.instructorService.instructors[0], this.instructorService.instructors[1]),
+      new Activity(2, 'Pilates', new Date('7 Jan 2024 17:00:00 +0000'), this.instructorService.instructors[2]),
+      new Activity(3, 'BodyPump', new Date('8 Jan 2024 13:00:00 +0000'), this.instructorService.instructors[5], this.instructorService.instructors[4]),
+      new Activity(4, 'Spinning', new Date('9 Jan 2024 10:00:00 +0000'), this.instructorService.instructors[3]),
+      new Activity(5, 'Spinning', new Date('9 Jan 2024 13:00:00 +0000'), this.instructorService.instructors[1]),
     ];
   }
 

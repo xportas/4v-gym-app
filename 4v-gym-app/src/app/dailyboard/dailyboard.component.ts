@@ -51,21 +51,20 @@ export class DailyboardComponent {
         if (aux[i].activity_date.getFullYear() === newSelectedDay.getFullYear() &&
         aux[i].activity_date.getMonth() === newSelectedDay.getMonth() &&
         aux[i].activity_date.getDate() === newSelectedDay.getDate()) {
-
-          if (aux[i].activity_date.getUTCHours() === 11) {
+          if (aux[i].activity_date.getHours() == 11) {
             this.act11h = aux[i];
           }
-          else if (aux[i].activity_date.getUTCHours() === 14) {
+          else if (aux[i].activity_date.getHours() == 14) {
             this.act14h = aux[i];
           }
-          else {
+          else if (aux[i].activity_date.getHours() == 18) {
             this.act18h = aux[i];
+          }
+          else {
+            console.log('There was an error with the assignament in the correct variable from activities list')
           }
         }
       }
-      console.log(this.act11h);
-      console.log(this.act14h);
-      console.log(this.act18h);
     }
   } // ngOnChanges function close
 

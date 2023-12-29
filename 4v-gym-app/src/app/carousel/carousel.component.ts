@@ -58,7 +58,7 @@ export class CarouselComponent {
   editInstructor(instructor: Instructor){
     this.instructorSended = instructor;
   }
-  // Método del componente hijo que envía el nuevo valor al componente padre
+  // Child component function that sends the new value to its father
   onBooleanEditChanged(value: boolean) {
     this.instructorSended = undefined;
     if (value){

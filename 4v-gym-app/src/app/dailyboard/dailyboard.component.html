@@ -1,5 +1,5 @@
 <!-- ACTIVITY MODAL -->
-<app-modalactivity [dataToModal]="dataToModal" (activitiesBoardChange)="refreshBoard()"></app-modalactivity>
+<app-modalactivity [dataToModal]="dataToModal" (activitiesBoardChange)="refreshBoard()" [activitySended]="activitySended" (resetActivity)="onBooleanEditChanged($event)"></app-modalactivity>
 
 <div class="container-fluid">
 
@@ -48,12 +48,12 @@
 
                 <div class="col-1">
                     <div class="row d-flex justify-content-end align-items-start">
-                        <button class="btn">
-                            <img src="../../assets/trash.svg" class="img-fluid" id="img-trash" (click)="deleteActivity(act11h)">
+                        <button class="btn" (click)="deleteActivity(act11h)">
+                            <img src="../../assets/trash.svg" class="img-fluid" id="img-trash">
                         </button>
                     </div>
                     <div class="row d-flex justify-content-end align-items-end">
-                        <button class="btn">
+                        <button class="btn" (click)="editActivity(act11h)" data-bs-toggle="modal" data-bs-target="#modal-activity">
                             <img src="../../assets/edit.svg" class="img-fluid" id="img-edit">
                         </button>
                     </div>
@@ -125,12 +125,12 @@
 
                 <div class="col-1">
                     <div class="row d-flex justify-content-end align-items-start">
-                        <button class="btn">
-                            <img src="../../assets/trash.svg" class="img-fluid" id="img-trash" (click)="deleteActivity(act14h)">
+                        <button class="btn" (click)="deleteActivity(act14h)">
+                            <img src="../../assets/trash.svg" class="img-fluid" id="img-trash">
                         </button>
                     </div>
                     <div class="row d-flex justify-content-end align-items-end">
-                        <button class="btn">
+                        <button class="btn" (click)="editActivity(act14h)" data-bs-toggle="modal" data-bs-target="#modal-activity">
                             <img src="../../assets/edit.svg" class="img-fluid" id="img-edit">
                         </button>
                     </div>
@@ -201,12 +201,12 @@
 
                 <div class="col-1">
                     <div class="row d-flex justify-content-end align-items-start">
-                        <button class="btn">
-                            <img src="../../assets/trash.svg" class="img-fluid" id="img-trash" (click)="deleteActivity(act18h)">
+                        <button class="btn" (click)="deleteActivity(act18h)">
+                            <img src="../../assets/trash.svg" class="img-fluid" id="img-trash">
                         </button>
                     </div>
                     <div class="row d-flex justify-content-end align-items-end">
-                        <button class="btn">
+                        <button class="btn" (click)="editActivity(act18h)" data-bs-toggle="modal" data-bs-target="#modal-activity">
                             <img src="../../assets/edit.svg" class="img-fluid" id="img-edit">
                         </button>
                     </div>

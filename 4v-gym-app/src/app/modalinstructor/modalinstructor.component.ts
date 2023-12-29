@@ -51,9 +51,7 @@ export class ModalinstructorComponent {
       this.instructorService.instructors[index] = editedInstructor;
     }
 
-    this.name.reset();
-    this.email.reset();
-    this.phone.reset();
+    this.resetFormValues();
 
     // Reset the value of instructorSended
     this.resetInstructor.emit(true);

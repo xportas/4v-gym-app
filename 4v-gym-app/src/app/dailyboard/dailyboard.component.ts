@@ -119,10 +119,10 @@ export class DailyboardComponent {
   }
 
   activitySended?: Activity = undefined;
-
   editActivity(activity: Activity) {
-    // this.activitySended = activity;
+    this.activitySended = activity;
   }
+
   // Método del componente hijo que envía el nuevo valor al componente padre
   onBooleanEditChanged(value: boolean) {
     this.activitySended = undefined;

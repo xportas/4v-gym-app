@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal-add-activity" data-bs-backdrop="static">
+<div class="modal fade" id="modal-activity" data-bs-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
@@ -37,7 +37,8 @@
             <div class="modal-footer d-flex justify-content-center align-items-center g-0 mb-3">
                 <div class="row d-flex align-items-center justify-content-center">
                     <div class="col-6">
-                        <button class="btn rounded-4" id="btn-modal" [disabled]="actType.invalid || instOne.invalid" data-bs-dismiss="modal" (click)="createNewActivity(actType.value, instOne.value, instTwo.value)">ACEPTAR</button>
+                        <button *ngIf="!activitySended" class="btn rounded-4" id="btn-modal" [disabled]="actType.invalid || instOne.invalid" data-bs-dismiss="modal" (click)="createNewActivity(actType.value, instOne.value, instTwo.value)">ACEPTAR</button>
+                        <button *ngIf="activitySended" class="btn rounded-4" id="btn-modal" [disabled]="actType.invalid || instOne.invalid" data-bs-dismiss="modal" (click)="editActivity(actType.value, instOne.value, instTwo.value)">ACEPTAR</button>
                     </div>
                     <div class="col-6">
                         <button class="btn rounded-4" data-bs-dismiss="modal" id="btn-modal" (click)="resetFormValues()">CANCELAR</button>

@@ -22,6 +22,10 @@ export class ModalactivityComponent {
   // Sending alert to dailyboard that we created a new activity
   @Output() activitiesBoardChange = new EventEmitter<boolean>();
 
+  // Necessary variables to execute edit Activity functions
+  @Input() activitySended?: Activity;
+  @Output() resetActivity = new EventEmitter<boolean>();
+
 
   constructor(public activitiesService: ActivitiesService, public instructorService: InstructorService) { }
 
@@ -39,13 +43,6 @@ export class ModalactivityComponent {
   onActTypeChange() {
     // if actType === BodyPump user can choose one more assistant instructor
     this.instrAssistant = this.actType.value === 'BodyPump';
-  }
-
-  resetFormValues() {
-    // Function to reset all the values into form
-    this.actType.setValue('');
-    this.instOne.setValue('');
-    this.instTwo.setValue('');
   }
 
 
@@ -67,9 +64,34 @@ export class ModalactivityComponent {
     this.resetFormValues();
 
     // Now, we need to refresh dailyboard to show the new activity
-      this.activitiesBoardChange.emit(true);
+    this.activitiesBoardChange.emit(true);
+  }
+
+  editActivity(actType: any, instOne: any, instTwo: any) {
+    let instructorOne = this.instructorService.instructors.find(inst => inst.id == instOne);
+    let instructorTwo = instTwo !== undefined ? this.instructorService.instructors.find(inst => inst.id == instTwo) : undefined;
+    
+    const editedActivity = new Activity(this.activitySended?.id || ++this.activitiesService.maxId, actType, this.activitySended?.activity_date || new Date(), instructorOne || new Instructor(99, 'CLASS', 'email', -1), instructorTwo);
+    
+    let index = this.activitiesService.activities.indexOf(this.activitySended || editedActivity);
+    console.log(index);
+
+    if (index !== -1) {
+      this.activitiesService.activities[index] = editedActivity;
+    }
+
+    this.resetFormValues();
+
+    // Reset the value of instructorSended
+    this.resetActivity.emit(true);
   }
 
 
+  resetFormValues() {
+    // Function to reset all the values into form
+    this.actType.setValue('');
+    this.instOne.setValue('');
+    this.instTwo.setValue('');
+  }
 
 }

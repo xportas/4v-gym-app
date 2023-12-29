@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common'; // IMPORT THIS BECAUSE IF YOU DONT IMPORT IT NGFOR CANT WORK
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { ActivitiesService, Activity } from '../services/activities.service';
@@ -16,8 +16,12 @@ import { Input } from '@angular/core';
 })
 export class ModalactivityComponent {
 
-  //Recibimos variable del padre
+  // Getting variable from father
   @Input() dataToModal: any;
+
+  // Sending alert to dailyboard that we created a new activity
+  @Output() activitiesBoardChange = new EventEmitter<boolean>();
+
 
   constructor(public activitiesService: ActivitiesService, public instructorService: InstructorService) { }
 
@@ -62,11 +66,9 @@ export class ModalactivityComponent {
     // Reset values of form
     this.resetFormValues();
 
-    //TODO: cuando funcione bien tengo que refrescar el daily board y sumar y restar un día con los métodos existentes
+    // Now, we need to refresh dailyboard to show the new activity
+      this.activitiesBoardChange.emit(true);
   }
-
-
-
 
 
 

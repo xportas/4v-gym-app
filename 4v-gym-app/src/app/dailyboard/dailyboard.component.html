@@ -1,5 +1,5 @@
 <!-- ACTIVITY MODAL -->
-<app-modalactivity [dataToModal]="dataToModal"></app-modalactivity>
+<app-modalactivity [dataToModal]="dataToModal" (activitiesBoardChange)="refreshBoard()"></app-modalactivity>
 
 <div class="container-fluid">
 
@@ -27,7 +27,7 @@
         <div *ngIf="act11h" class="col-10 p-0" id="row-activity">
             <div class="row" style="max-width: 100%; max-height: 100%;">
 
-                <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+                <div class="col-3 d-flex flex-column align-items-center justify-content-center" style="text-align: center;">
                     <img src="../../assets/person.svg" class="img-fluid" id="img-person">
                     <p>{{act11h.instructor1.name}}</p>
                 </div>
@@ -85,7 +85,7 @@
     <div class="row" id="row-container">
         
         <div class="col-2 d-flex align-items-center justify-content-center p-2">
-            <p>13:00<br>15:00</p>
+            <p>13:30<br>15:00</p>
         </div>
 
         <div *ngIf="!act14h" class="col-10 p-0" id="free">
@@ -104,7 +104,7 @@
         <div *ngIf="act14h" class="col-10 p-0" id="row-activity">
             <div class="row" style="max-width: 100%; max-height: 100%;">
 
-                <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+                <div class="col-3 d-flex flex-column align-items-center justify-content-center" style="text-align: center;">
                     <img src="../../assets/person.svg" class="img-fluid" id="img-person">
                     <p>{{act14h.instructor1.name}}</p>
                 </div>
@@ -180,7 +180,7 @@
         <div *ngIf="act18h" class="col-10 p-0" id="row-activity">
             <div class="row" style="max-width: 100%; max-height: 100%;">
 
-                <div class="col-3 d-flex flex-column align-items-center justify-content-center">
+                <div class="col-3 d-flex flex-column align-items-center justify-content-center" style="text-align: center;">
                     <img src="../../assets/person.svg" class="img-fluid" id="img-person">
                     <p>{{act18h.instructor1.name}}</p>
                 </div>

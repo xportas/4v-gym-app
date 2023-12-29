@@ -111,4 +111,4 @@ The resulting files will be in the `dist/` directory.
 
 ### Collaboration
 
-If multiple developers are working on the project, consider using a version control system like Git and platforms like GitHub to manage contributions and track changes. You can create your own branch and redirect the application to a new level!
+If multiple developers are working on the project, consider create your own branch and redirect the application to a new level!

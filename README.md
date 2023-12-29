@@ -8,6 +8,8 @@ The 4V-GYM web interface is a platform developed in Angular 17 and Bootstrap 5 t
   <tr>
     <td><img src="./4v-gym-app/src/assets/ss1.png" style="max-width: 300px;"></td>
     <td><img src="./4v-gym-app/src/assets/ss2.png" style="max-width: 300px;"></td>
+  </tr>
+  <tr>
     <td><img src="./4v-gym-app/src/assets/ss3.png" style="max-width: 300px;"></td>
     <td><img src="./4v-gym-app/src/assets/ss4.png" style="max-width: 300px;"></td>
   </tr>

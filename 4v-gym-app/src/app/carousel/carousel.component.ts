@@ -3,14 +3,13 @@ import { ModalinstructorComponent } from '../modalinstructor/modalinstructor.com
 import { Instructor, InstructorService } from '../services/instructor.service';
 import { NgFor } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ModaleditinstructorComponent } from '../modaleditinstructor/modaleditinstructor.component';
 
 
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [ModalinstructorComponent, NgFor, ReactiveFormsModule, ModaleditinstructorComponent],
+  imports: [ModalinstructorComponent, NgFor, ReactiveFormsModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })

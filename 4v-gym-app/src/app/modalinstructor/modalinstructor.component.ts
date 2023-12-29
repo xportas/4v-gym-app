@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { Instructor, InstructorService } from '../services/instructor.service';
 import { NgIf } from '@angular/common';
@@ -15,6 +15,12 @@ import { NgIf } from '@angular/common';
   styleUrl: './modalinstructor.component.css'
 })
 export class ModalinstructorComponent {
+
+  // Necessary variables to execute edit Instructor functions
+  @Input() instructorSended?: Instructor;
+  @Output() resetInstructor = new EventEmitter<boolean>();
+
+
 
   name = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -35,7 +41,26 @@ export class ModalinstructorComponent {
     console.log(this.instructorService.instructors);
   }
 
-  resetFormValues(){
+
+  editInstructor(name: any, email: any, phone: any) {
+    const editedInstructor = new Instructor(this.instructorSended?.id || this.instructorService.maxId++, name, email, phone);
+    let index = this.instructorService.instructors.indexOf(this.instructorSended || editedInstructor);
+    console.log(index);
+
+    if (index !== -1) {
+      this.instructorService.instructors[index] = editedInstructor;
+    }
+
+    this.name.reset();
+    this.email.reset();
+    this.phone.reset();
+
+    // Reset the value of instructorSended
+    this.resetInstructor.emit(true);
+  }
+
+
+  resetFormValues() {
     // Function to reset all the values into form
     this.name.reset();
     this.email.reset();

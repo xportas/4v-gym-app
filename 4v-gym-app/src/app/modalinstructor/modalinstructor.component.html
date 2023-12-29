@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal-add-instructor" data-bs-backdrop="static">
+<div class="modal fade" id="modal-instructor" data-bs-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
@@ -39,7 +39,8 @@
             <div class="modal-footer d-flex justify-content-center align-items-center g-0">
                 <div class="row d-flex align-items-center justify-content-center">
                     <div class="col-6">
-                        <button class="btn rounded-4" id="btn-modal" [disabled]="name.invalid || email.invalid || phone.invalid" (click)="createInstructor(name.value , email.value, phone.value)" data-bs-dismiss="modal">ACEPTAR</button>
+                        <button *ngIf="!instructorSended" class="btn rounded-4" id="btn-modal" [disabled]="name.invalid || email.invalid || phone.invalid" (click)="createInstructor(name.value , email.value, phone.value)" data-bs-dismiss="modal">ACEPTAR</button>
+                        <button *ngIf="instructorSended" class="btn rounded-4" id="btn-modal" [disabled]="name.invalid || email.invalid || phone.invalid" (click)="editInstructor(name.value , email.value, phone.value)" data-bs-dismiss="modal">ACEPTAR</button>
                     </div>
                     <div class="col-6">
                         <button class="btn rounded-4" data-bs-dismiss="modal" id="btn-modal" (click)="resetFormValues()">CANCELAR</button>

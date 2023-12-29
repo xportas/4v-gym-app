@@ -4,14 +4,6 @@
 
 The 4V-GYM web interface is a platform developed in Angular 17 and Bootstrap 5 that allows managing activities and monitors in a gym. The application provides an intuitive and efficient interface for operations such as scheduling, editing, deleting, and viewing activities, as well as managing monitors.
 
-![Captura de pantalla 2023-12-29 175623](https://github.com/xportas/4v-gym-app/assets/105586880/27588dc4-ed4e-4f03-a56b-9baf9a36bf80){:max-width="20px"}
-
-![Captura de pantalla 2023-12-29 175649](https://github.com/xportas/4v-gym-app/assets/105586880/20319e09-7dff-4f98-ab90-c20aea78eddc){:max-width="300px"}
-
-![Captura de pantalla 2023-12-29 175704](https://github.com/xportas/4v-gym-app/assets/105586880/0c43a4c4-b822-4749-825c-5e0ef18a7301){:max-width="400px"}
-
-![Captura de pantalla 2023-12-29 175717](https://github.com/xportas/4v-gym-app/assets/105586880/72527334-317a-42e0-acf6-2489b3964be4){:max-width="500px"}
-
 ## Technologies Used
 
 - **Angular 17**: Web development framework used to build the user interface and manage the "single page application" logic of the web.

@@ -23,7 +23,7 @@ export class DailyboardComponent {
 
   // Getting alert from modal that we created a new activity
   @Input() activitiesBoardChange?: boolean;
-  
+
 
 
   // Activities in this day
@@ -78,36 +78,58 @@ export class DailyboardComponent {
     this.dataToModal = [this.selectedDay, hour];
   }
 
-  refreshBoard(){
+  refreshBoard() {
     this.activitiesBoardChange = false;
-    
-      this.act11h = undefined;
-      this.act14h = undefined;
-      this.act18h = undefined;
 
-      // Get value of selectedDay
-      let newSelectedDay = this.selectedDay;
+    this.act11h = undefined;
+    this.act14h = undefined;
+    this.act18h = undefined;
 
-      // Get all the activities and add to currentactivities
-      let aux = this.activitiesService.activities;
-      for (let i = 0; i < aux.length; i++) {
-        if (aux[i].activity_date.getFullYear() === newSelectedDay.getFullYear() &&
-          aux[i].activity_date.getMonth() === newSelectedDay.getMonth() &&
-          aux[i].activity_date.getDate() === newSelectedDay.getDate()) {
-          if (aux[i].activity_date.getHours() == 11) {
-            this.act11h = aux[i];
-          }
-          else if (aux[i].activity_date.getHours() == 14) {
-            this.act14h = aux[i];
-          }
-          else if (aux[i].activity_date.getHours() == 18) {
-            this.act18h = aux[i];
-          }
-          else {
-            console.log('There was an error with the assignament in the correct variable from activities list')
-          }
+    // Get value of selectedDay
+    let newSelectedDay = this.selectedDay;
+
+    // Get all the activities and add to currentactivities
+    let aux = this.activitiesService.activities;
+    for (let i = 0; i < aux.length; i++) {
+      if (aux[i].activity_date.getFullYear() === newSelectedDay.getFullYear() &&
+        aux[i].activity_date.getMonth() === newSelectedDay.getMonth() &&
+        aux[i].activity_date.getDate() === newSelectedDay.getDate()) {
+        if (aux[i].activity_date.getHours() == 11) {
+          this.act11h = aux[i];
+        }
+        else if (aux[i].activity_date.getHours() == 14) {
+          this.act14h = aux[i];
+        }
+        else if (aux[i].activity_date.getHours() == 18) {
+          this.act18h = aux[i];
+        }
+        else {
+          console.log('There was an error with the assignament in the correct variable from activities list')
         }
       }
     }
+  }
+
+
+  /* DELETE AND EDIT FUNCTIONS */
+  deleteActivity(activity: Activity) {
+    let position = this.activitiesService.activities.indexOf(activity);
+    this.activitiesService.activities.splice(position, 1);
+    this.refreshBoard();
+  }
+
+  activitySended?: Activity = undefined;
+
+  editActivity(activity: Activity) {
+    // this.activitySended = activity;
+  }
+  // Método del componente hijo que envía el nuevo valor al componente padre
+  onBooleanEditChanged(value: boolean) {
+    this.activitySended = undefined;
+    if (value) {
+      this.refreshBoard();
+    }
+  }
+  /* END OF DELETE AND EDIT FUNCTIONS */
 
 } // class close

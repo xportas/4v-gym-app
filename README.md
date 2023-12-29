@@ -1,4 +1,4 @@
-# 4V-GYM Web Interface README
+# 4V-GYM
 
 ## Application Description
 

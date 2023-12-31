@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { Instructor, InstructorService } from '../services/instructor.service';
 import { NgIf } from '@angular/common';
@@ -28,6 +28,17 @@ export class ModalinstructorComponent {
   phone = new FormControl('', [Validators.required, Validators.pattern(/^\d+$/)]);
 
   constructor(public instructorService: InstructorService) { }
+
+
+
+  // Function that is listening changes on instructorSended variable to load data into the form inputs
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['instructorSended'] && changes['instructorSended'].currentValue) {
+      this.name.setValue(this.instructorSended?.name || '');
+      this.email.setValue(this.instructorSended?.email || '');
+      this.phone.setValue(this.instructorSended?.phoneNumber.toString() || '');
+    }
+  }
 
 
   createInstructor(name: any, email: any, phone: any) {

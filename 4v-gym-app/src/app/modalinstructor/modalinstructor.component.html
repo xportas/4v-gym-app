@@ -13,12 +13,12 @@
             <div class="modal-body p-0 mb-3">
 
                 <div class="row d-flex align-items-center justify-content-center p-0 m-2">
-                    <input type="text" class="form-control" placeholder="Nombre" [formControl]="name">
+                    <input type="text" class="form-control" [placeholder]="instructorSended ? instructorSended.name : 'Nombre'" [formControl]="name">
                     <div class="alert alert-danger mt-2" [hidden]="name.valid || name.pristine">El nombre es obligatorio</div>
                 </div>
 
                 <div class="row d-flex align-items-center justify-content-center p-0 m-2">
-                    <input type="text" class="form-control" placeholder="Email" [formControl]="email">
+                    <input type="text" class="form-control" [placeholder]="instructorSended ? instructorSended.email : 'Email'" [formControl]="email">
                     <div class="alert alert-danger mt-2" [hidden]="email.valid || email.pristine">
                         <span *ngIf="email.errors?.['required']">El correo electrónico es obligatorio</span>
                         <span *ngIf="email.errors?.['email']">El correo electrónico debe ser válido</span>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="row d-flex align-items-center justify-content-center p-0 m-2">
-                    <input type="text" class="form-control" placeholder="Teléfono" [formControl]="phone">
+                    <input type="text" class="form-control" [placeholder]="instructorSended ? instructorSended.phoneNumber.toString() : 'Teléfono'" [formControl]="phone">
                     <div class="alert alert-danger mt-2" [hidden]="phone.valid || phone.pristine">
                         <span *ngIf="phone.errors?.['required']">El teléfono es obligatorio</span>
                         <span *ngIf="phone.errors?.['pattern']">El teléfono debe ser válido</span>

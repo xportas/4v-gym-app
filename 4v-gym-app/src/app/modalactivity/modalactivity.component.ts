@@ -33,8 +33,6 @@ export class ModalactivityComponent {
   instOne = new FormControl('', [Validators.required]);
   instTwo = new FormControl('');
 
-  allActivities: Activity[] = this.activitiesService.activities;
-  allInstructors: Instructor[] = this.instructorService.instructors;
 
   // variable to show (or not) the select of assistant instructor
   instrAssistant: boolean = false;

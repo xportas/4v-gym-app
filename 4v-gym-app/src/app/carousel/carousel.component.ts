@@ -44,8 +44,8 @@ export class CarouselComponent {
 
 
 
-    /* DELETE AND EDIT FUNCTIONS */
-  deleteInstructor(instructor: Instructor){
+  /* DELETE AND EDIT FUNCTIONS */
+  deleteInstructor(instructor: Instructor) {
     let position = this.instructors.indexOf(instructor);
     this.instructors.splice(position, 1);
     this.nextInstructors();
@@ -54,19 +54,18 @@ export class CarouselComponent {
 
   instructorSended?: Instructor = undefined;
 
-  editInstructor(instructor: Instructor){
+  editInstructor(instructor: Instructor) {
     this.instructorSended = instructor;
   }
   // Child component function that sends the new value to its father
   onBooleanEditChanged(value: boolean) {
     this.instructorSended = undefined;
-    if (value){
+    if (value) {
       this.nextInstructors();
       this.previousInstructors();
     }
   }
-    /* END OF DELETE AND EDIT FUNCTIONS */
-
+  /* END OF DELETE AND EDIT FUNCTIONS */
 
 
   /*
@@ -83,7 +82,7 @@ export class CarouselComponent {
 
   filterInstructors() {
     const searchTerm = this.searchText.value?.toLowerCase() || '';
-    if (searchTerm == ''){
+    if (searchTerm == '') {
       this.instructorsInScreen = this.getInstructorsInScreen();
       return;
     }

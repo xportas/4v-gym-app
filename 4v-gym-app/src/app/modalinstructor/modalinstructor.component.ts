@@ -19,6 +19,7 @@ export class ModalinstructorComponent {
   // Necessary variables to execute edit Instructor functions
   @Input() instructorSended?: Instructor;
   @Output() resetInstructor = new EventEmitter<boolean>();
+  @Output() refreshCarousel = new EventEmitter<boolean>();
 
 
 
@@ -38,7 +39,7 @@ export class ModalinstructorComponent {
     this.email.reset();
     this.phone.reset();
 
-    console.log(this.instructorService.instructors);
+    this.resetInstructor.emit(true);
   }
 
 
@@ -60,6 +61,7 @@ export class ModalinstructorComponent {
 
   resetFormValues() {
     // Function to reset all the values into form
+    this.resetInstructor.emit(true);
     this.name.reset();
     this.email.reset();
     this.phone.reset();

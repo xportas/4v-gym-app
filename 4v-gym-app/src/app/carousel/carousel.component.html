@@ -5,7 +5,8 @@
         <div class="col-10 d-flex align-items-center justify-content-center">
             <div class="input-group d-flex justify-content-center">
                 <span class="input-group-text"><img src="../../assets/search.svg" id="img-search"></span>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="input-group-left" [formControl]="searchText">
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="input-group-left"
+                    [formControl]="searchText">
             </div>
         </div>
         <div class="col-2">
@@ -30,7 +31,7 @@
             <div class="row g-2">
 
                 <div class="col-4" *ngFor="let instructor of instructorsInScreen">
-                    <div class="card justify-content-center align-items-center">
+                    <div class="card justify-content-center">
                         <div class="row g-0">
                             <div class="col-2 d-flex align-items-start">
                                 <button class="btn" (click)="deleteInstructor(instructor)">
@@ -41,15 +42,16 @@
                                 <img src="../../assets/person.svg" id="img-person" class="card-img-top img-fluid">
                             </div>
                             <div class="col-2 d-flex justify-content-end align-items-start">
-                                <button class="btn" (click)="editInstructor(instructor)" data-bs-toggle="modal" data-bs-target="#modal-instructor">
+                                <button class="btn" (click)="editInstructor(instructor)" data-bs-toggle="modal"
+                                    data-bs-target="#modal-instructor">
                                     <img src="../../assets/edit.svg" id="img-drop-edit">
                                 </button>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <p class="card-title">{{instructor.name}}</p>
-                            <p class="card-text">{{instructor.email}}</p>
-                            <p class="card-text">{{instructor.phoneNumber}}</p>
+                        <div class="card-body justify-content-center align-items-center text-center">
+                                <p class="card-title"><b>{{instructor.name}}</b></p>
+                                <p class="card-text">{{instructor.email}}</p>
+                                <p class="card-text">{{instructor.phoneNumber}}</p>
                         </div>
                     </div>
                 </div>
@@ -59,13 +61,15 @@
 
 
         <div class="col-1 d-flex justify-content-center">
-            <button class="btn" (click)="nextInstructors()"><img src="../../assets/rightarrow.svg" id="img-arrow"></button>
+            <button class="btn" (click)="nextInstructors()"><img src="../../assets/rightarrow.svg"
+                    id="img-arrow"></button>
         </div>
 
     </div>
 
 
     <!-- MODAL INSTRUCTOR -->
-    <app-modalinstructor [instructorSended]="instructorSended" (resetInstructor)="onBooleanEditChanged($event)"></app-modalinstructor>
+    <app-modalinstructor [instructorSended]="instructorSended"
+        (resetInstructor)="onBooleanEditChanged($event)"></app-modalinstructor>
 
 </div>
